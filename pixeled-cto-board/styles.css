@@ -28,7 +28,7 @@ body {
   min-height: 100dvh;
   background: var(--paper);
   color: var(--ink);
-  font: 18px/1.45 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segue UI", system-ui, sans-serif;
+  font: 18px/1.45 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
