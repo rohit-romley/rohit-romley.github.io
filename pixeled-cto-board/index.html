@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#12141a">
+  <meta name="theme-color" content="#F4EDE3">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="description" content="Pixeled Apps CTO status board — Eduable and Mockaccino.">
   <title>Pixeled Apps · CTO board</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip" href="#board">Skip to projects</a>
+  <a class="skip" href="#needs-you">Skip to what needs you</a>
 
   <header class="top">
     <div class="brand">
@@ -21,21 +21,31 @@
     </div>
     <p class="updated">
       Last updated
-      <time id="updated" datetime="2026-08-15T17:20:00Z">15 Aug 2026, 11:20 AM MDT</time>
+      <time id="updated" datetime="2026-08-15T17:25:00Z">Sat, 15 Aug 2026, 11:25 AM MDT</time>
     </p>
   </header>
 
   <main>
+    <section class="needs" id="needs-you" aria-labelledby="needs-title">
+      <p class="kicker">Start here · Needs you</p>
+      <h1 id="needs-title">Mockaccino live Supabase lock</h1>
+      <p class="needs-lede">Go / no-go. Real RLS holes: anon can read/update users. Store-admin SQL was not applied, on purpose. No SQL until you say.</p>
+      <div class="decisions">
+        <a class="btn lock" data-decision="Tell the CTO: lock it down" href="mailto:tom.sammer@gmail.com?subject=Tell%20the%20CTO%3A%20lock%20it%20down">Tell the CTO: lock it down</a>
+        <a class="btn hold" data-decision="Tell the CTO: hold off" href="mailto:tom.sammer@gmail.com?subject=Tell%20the%20CTO%3A%20hold%20off">Tell the CTO: hold off</a>
+      </div>
+    </section>
+
     <section class="board" id="board" aria-label="Projects">
-      <article class="col" aria-labelledby="eduable-title">
-        <header class="col-head">
+      <article class="card eduable" aria-labelledby="eduable-title">
+        <header class="card-head">
           <div>
-            <h1 id="eduable-title">Eduable</h1>
+            <h2 id="eduable-title">Eduable</h2>
             <p class="sub">TanStack migration</p>
           </div>
-          <p class="badge quiet">Quiet / leftovers cleared</p>
+          <p class="pill pass">All clear</p>
         </header>
-
+        <p class="happening">Leftovers #29–#32 verified. Nothing from you.</p>
         <dl>
           <div class="row">
             <dt>Last real work</dt>
@@ -67,15 +77,15 @@
         </dl>
       </article>
 
-      <article class="col" aria-labelledby="mock-title">
-        <header class="col-head">
+      <article class="card mockaccino" aria-labelledby="mock-title">
+        <header class="card-head">
           <div>
-            <h1 id="mock-title">Mockaccino</h1>
+            <h2 id="mock-title">Mockaccino</h2>
             <p class="sub">Chrome extension</p>
           </div>
-          <p class="badge active">Active — security follow-up</p>
+          <p class="pill wait">Needs you</p>
         </header>
-
+        <p class="happening">Go / no-go on locking live Supabase. No SQL until you say.</p>
         <dl>
           <div class="row">
             <dt>Pack</dt>
@@ -94,10 +104,10 @@
               </ul>
             </dd>
           </div>
-          <div class="row warn">
-            <dt>Live Supabase</dt>
+          <div class="row hole">
+            <dt>Security hole</dt>
             <dd>
-              Project: Mockaccino-chrome. Real RLS holes found: anon can read/update users.
+              Live Supabase project: Mockaccino-chrome. Real RLS holes found: anon can read/update users.
               Store-admin SQL was <strong>not</strong> applied, on purpose.
             </dd>
           </div>
@@ -124,16 +134,24 @@
       </article>
     </section>
 
+    <section class="howto-wrap" aria-labelledby="howto-title">
+      <h2 id="howto-title" class="howto-kicker">Where to click</h2>
+      <ol class="howto">
+        <li><span class="n">1</span> Look at Needs you</li>
+        <li><span class="n">2</span> Open a project card</li>
+        <li><span class="n">3</span> Leave a note or text Grok Bot</li>
+      </ol>
+    </section>
+
     <section class="note-card" aria-labelledby="note-title">
       <h2 id="note-title">Leave the CTO a note</h2>
-      <p class="lede">Opens Mail on your phone. Subject is set for you.</p>
       <form id="note-form" action="mailto:tom.sammer@gmail.com" method="get">
-        <input type="hidden" name="subject" value="CTO board note">
+        <input type="hidden" name="subject" id="note-subject" value="CTO board note">
         <label for="note">Note</label>
         <textarea id="note" name="body" rows="5" required maxlength="4000" placeholder="Go / no-go, a question, or whatever you want Tom to see."></textarea>
-        <button type="submit">Send</button>
+        <button type="submit">Open Mail</button>
       </form>
-      <p class="alt">Or just text me in the Grok Bot chat — I see that first.</p>
+      <p class="alt">This opens the Mail app. Or skip it and text me in Grok Bot — I see that first.</p>
     </section>
   </main>
 

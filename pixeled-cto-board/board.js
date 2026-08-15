@@ -14,20 +14,31 @@
     }).format(when);
   }
 
+  var note = document.getElementById("note");
+  var subject = document.getElementById("note-subject");
   var form = document.getElementById("note-form");
+
+  document.querySelectorAll("[data-decision]").forEach(function (el) {
+    el.addEventListener("click", function () {
+      var text = el.getAttribute("data-decision");
+      if (subject) subject.value = text;
+      if (note && !note.value.trim()) note.value = text + ".";
+    });
+  });
+
   if (!form) return;
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var body = (document.getElementById("note").value || "").trim();
+    var body = (note && note.value || "").trim();
     if (!body) {
-      document.getElementById("note").focus();
+      if (note) note.focus();
       return;
     }
-    var url =
+    var subj = (subject && subject.value) || "CTO board note";
+    window.location.href =
       "mailto:tom.sammer@gmail.com?subject=" +
-      encodeURIComponent("CTO board note") +
+      encodeURIComponent(subj) +
       "&body=" +
       encodeURIComponent(body);
-    window.location.href = url;
   });
 })();
