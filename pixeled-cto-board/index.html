@@ -21,18 +21,18 @@
     </div>
     <p class="updated">
       Last updated
-      <time id="updated" datetime="2026-08-15T17:38:00Z">Sat, 15 Aug 2026, 11:38 AM MDT</time>
+      <time id="updated" datetime="2026-08-15T17:46:00Z">Sat, 15 Aug 2026, 11:46 AM MDT</time>
     </p>
   </header>
 
   <main>
     <section class="summary" id="summary" aria-labelledby="summary-title">
       <p class="kicker">Where we’re at</p>
-      <h1 id="summary-title">Two projects. Eduable is quiet. Mockaccino is locking live Supabase, then E2E.</h1>
+      <h1 id="summary-title">Two projects. Eduable is quiet. Mockaccino RLS is locked; QA clicking through.</h1>
       <ul class="stats">
         <li class="stat overall">
           <p class="stat-k">Overall</p>
-          <p class="stat-v">2 projects. Eduable quiet. Mockaccino locking live Supabase, then E2E.</p>
+          <p class="stat-v">Eduable quiet. Mockaccino RLS is locked; QA clicking through.</p>
         </li>
         <li class="stat clear">
           <p class="stat-k">Needs you</p>
@@ -40,10 +40,10 @@
         </li>
         <li class="stat flight">
           <p class="stat-k">In flight</p>
-          <p class="stat-v">Mockaccino RLS hardening (Developer writing migration). QA E2E queued after.</p>
+          <p class="stat-v">QA E2E after RLS lock</p>
         </li>
       </ul>
-      <p class="quiet">RLS lock is in flight — nothing for you to click unless you want to leave a note.</p>
+      <p class="quiet">Nothing for you to click unless you want to leave a note.</p>
     </section>
 
     <nav class="tabs" aria-label="Projects">
@@ -110,10 +110,10 @@
           <ul>
             <li class="ticket">
               <p class="t">Apply store-admin SQL</p>
-              <p class="d">Blocked until session/RLS lock lands</p>
+              <p class="d">Still not applied</p>
             </li>
             <li class="ticket">
-              <p class="t">Merge PRs #7 #8 #9</p>
+              <p class="t">Merge PRs #7 #8 #9 #10</p>
               <p class="d">Not asked</p>
             </li>
           </ul>
@@ -121,24 +121,23 @@
         <section class="lane">
           <h3>Doing <span class="count">1</span></h3>
           <ul>
-            <li class="ticket security">
-              <p class="t">Live RLS hardening</p>
-              <p class="d">users UPDATE anon, chat_events RLS, store admin policy, revoke merge/test RPCs, edge JWT. Session RPCs stay so the extension still works.</p>
+            <li class="ticket">
+              <p class="t">QA E2E vs live hardened RLS</p>
+              <p class="d">Handshake, options, dashboard, jobs, requests, karma modal no-send, Admin. In flight — not done yet.</p>
             </li>
           </ul>
         </section>
-        <section class="lane wait">
-          <h3>Waiting <span class="count">1</span></h3>
-          <ul>
-            <li class="ticket">
-              <p class="t">QA E2E</p>
-              <p class="d">After SQL is live</p>
-            </li>
-          </ul>
+        <section class="lane">
+          <h3>Waiting <span class="count">0</span></h3>
+          <p class="empty">Nothing on you</p>
         </section>
         <section class="lane done">
-          <h3>Done <span class="count">8</span></h3>
+          <h3>Done <span class="count">9</span></h3>
           <ul>
+            <li class="ticket">
+              <p class="t">Live RLS hardening applied (PR #10)</p>
+              <p class="d">close_live_rls_holes on Mockaccino-chrome</p>
+            </li>
             <li class="ticket">
               <p class="t">Slim pack 92→4.4MB</p>
               <p class="d">Unpacked · UI instant</p>
