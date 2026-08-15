@@ -21,26 +21,26 @@
     </div>
     <p class="updated">
       Last updated
-      <time id="updated" datetime="2026-08-15T17:46:00Z">Sat, 15 Aug 2026, 11:46 AM MDT</time>
+      <time id="updated" datetime="2026-08-15T19:54:00Z">Sat, 15 Aug 2026, 1:54 PM MDT</time>
     </p>
   </header>
 
   <main>
     <section class="summary" id="summary" aria-labelledby="summary-title">
       <p class="kicker">Where we’re at</p>
-      <h1 id="summary-title">Two projects. Eduable is quiet. Mockaccino RLS is locked; QA clicking through.</h1>
+      <h1 id="summary-title">Two projects. Both teams parked. Nothing in flight.</h1>
       <ul class="stats">
         <li class="stat overall">
           <p class="stat-k">Overall</p>
-          <p class="stat-v">Eduable quiet. Mockaccino RLS is locked; QA clicking through.</p>
+          <p class="stat-v">Eduable quiet. Mockaccino locked and working. Team parked.</p>
         </li>
         <li class="stat clear">
           <p class="stat-k">Needs you</p>
           <p class="stat-v">None right now</p>
         </li>
-        <li class="stat flight">
+        <li class="stat clear">
           <p class="stat-k">In flight</p>
-          <p class="stat-v">QA E2E after RLS lock</p>
+          <p class="stat-v">None</p>
         </li>
       </ul>
       <p class="quiet">Nothing for you to click unless you want to leave a note.</p>
@@ -102,11 +102,11 @@
           <h2 id="mock-title">Mockaccino</h2>
           <p class="sub">Chrome extension</p>
         </div>
-        <p class="pill flight">In flight</p>
+        <p class="pill pass">Parked</p>
       </header>
       <div class="lanes" aria-label="Mockaccino swim lanes">
         <section class="lane">
-          <h3>Backlog <span class="count">2</span></h3>
+          <h3>Backlog <span class="count">3</span></h3>
           <ul>
             <li class="ticket">
               <p class="t">Apply store-admin SQL</p>
@@ -116,24 +116,31 @@
               <p class="t">Merge PRs #7 #8 #9 #10</p>
               <p class="d">Not asked</p>
             </li>
+            <li class="ticket">
+              <p class="t">List columns in a later pack</p>
+              <p class="d">So email/Stripe can be hidden again</p>
+            </li>
           </ul>
         </section>
         <section class="lane">
-          <h3>Doing <span class="count">1</span></h3>
-          <ul>
-            <li class="ticket">
-              <p class="t">QA E2E vs live hardened RLS</p>
-              <p class="d">Handshake, options, dashboard, jobs, requests, karma modal no-send, Admin. In flight — not done yet.</p>
-            </li>
-          </ul>
+          <h3>Doing <span class="count">0</span></h3>
+          <p class="empty">Nothing in flight</p>
         </section>
         <section class="lane">
           <h3>Waiting <span class="count">0</span></h3>
           <p class="empty">Nothing on you</p>
         </section>
         <section class="lane done">
-          <h3>Done <span class="count">9</span></h3>
+          <h3>Done <span class="count">11</span></h3>
           <ul>
+            <li class="ticket">
+              <p class="t">QA E2E after RLS lock</p>
+              <p class="d">All 8 PASS · team parked</p>
+            </li>
+            <li class="ticket">
+              <p class="t">SELECT * restored for current pack</p>
+              <p class="d">UPDATE-any-user still closed</p>
+            </li>
             <li class="ticket">
               <p class="t">Live RLS hardening applied (PR #10)</p>
               <p class="d">close_live_rls_holes on Mockaccino-chrome</p>
