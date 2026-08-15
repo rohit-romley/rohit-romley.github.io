@@ -21,29 +21,29 @@
     </div>
     <p class="updated">
       Last updated
-      <time id="updated" datetime="2026-08-15T20:44:00Z">Sat, 15 Aug 2026, 2:44 PM MDT</time>
+      <time id="updated" datetime="2026-08-15T21:07:00Z">Sat, 15 Aug 2026, 3:07 PM MDT</time>
     </p>
   </header>
 
   <main>
     <section class="summary" id="summary" aria-labelledby="summary-title">
       <p class="kicker">Where we’re at</p>
-      <h1 id="summary-title">Eduable is parked. Mockaccino last ship is the stack on main. QA passed on #12. Waiting on you.</h1>
+      <h1 id="summary-title">Both teams parked. #12 is ready and held.</h1>
       <ul class="stats">
         <li class="stat overall">
           <p class="stat-k">Overall</p>
-          <p class="stat-v">Eduable parked. Mockaccino last ship = stack on main. QA passed on #12. Waiting on you.</p>
+          <p class="stat-v">Eduable parked. Mockaccino parked. Last ship = stack on main. #12 ready, held.</p>
         </li>
-        <li class="stat wait">
+        <li class="stat clear">
           <p class="stat-k">Needs you</p>
-          <p class="stat-v">Merge #12 and/or hide email/Stripe on live</p>
+          <p class="stat-v">None</p>
         </li>
         <li class="stat clear">
           <p class="stat-k">In flight</p>
           <p class="stat-v">None</p>
         </li>
       </ul>
-      <p class="quiet">Live UPDATE-any-user still closed. users SELECT * still open (email/Stripe readable). Old packs will 403 until they load this dist.</p>
+      <p class="quiet">Live UPDATE-any-user still closed. users SELECT * still open (email/Stripe readable) on purpose until they assign hide. #12 stays open — do not merge, do not REVOKE live columns.</p>
     </section>
 
     <nav class="tabs" aria-label="Projects">
@@ -100,14 +100,18 @@
       <header class="project-head">
         <div>
           <h2 id="mock-title">Mockaccino</h2>
-          <p class="sub">Chrome extension · waiting on you</p>
+          <p class="sub">Chrome extension · parked</p>
         </div>
-        <p class="pill wait">Waiting</p>
+        <p class="pill pass">Parked</p>
       </header>
       <div class="lanes" aria-label="Mockaccino swim lanes">
         <section class="lane">
-          <h3>Backlog <span class="count">1</span></h3>
+          <h3>Backlog <span class="count">2</span></h3>
           <ul>
+            <li class="ticket">
+              <p class="t">#12 column-list pack</p>
+              <p class="d">Ready, held · stays OPEN · do not merge · do not REVOKE live columns · QA PASS (handshake, members, options, Admin) · dist 4.4MB v5.0.0</p>
+            </li>
             <li class="ticket">
               <p class="t">Apply store-admin SQL</p>
               <p class="d">Still blocked — set_session_user is spoofable</p>
@@ -118,14 +122,9 @@
           <h3>Doing <span class="count">0</span></h3>
           <p class="empty">Nothing in flight</p>
         </section>
-        <section class="lane wait">
-          <h3>Waiting <span class="count">1</span></h3>
-          <ul>
-            <li class="ticket">
-              <p class="t">Merge #12 and/or hide email/Stripe on live</p>
-              <p class="d">PR #12 open draft, clean, off main · cursor/users-explicit-select-08f4 @ ac281697 · dist 4.4MB v5.0.0 · old packs 403 until they load this dist</p>
-            </li>
-          </ul>
+        <section class="lane">
+          <h3>Waiting <span class="count">0</span></h3>
+          <p class="empty">Nothing on you</p>
         </section>
         <section class="lane done">
           <h3>Done <span class="count">13</span></h3>
@@ -144,7 +143,7 @@
             </li>
             <li class="ticket">
               <p class="t">SELECT * restored for current pack</p>
-              <p class="d">UPDATE-any-user still closed · email/Stripe still readable until the column-list pack ships</p>
+              <p class="d">UPDATE-any-user still closed · email/Stripe still readable on purpose until they assign hide</p>
             </li>
             <li class="ticket">
               <p class="t">Live RLS hardening applied (PR #10)</p>
