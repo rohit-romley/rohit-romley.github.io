@@ -14,18 +14,52 @@
     }).format(when);
   }
 
-  var note = document.getElementById("note");
-  var subject = document.getElementById("note-subject");
-  var form = document.getElementById("note-form");
+  var tabs = ["all", "eduable", "mockaccino"];
 
-  document.querySelectorAll("[data-decision]").forEach(function (el) {
-    el.addEventListener("click", function () {
-      var text = el.getAttribute("data-decision");
-      if (subject) subject.value = text;
-      if (note && !note.value.trim()) note.value = text + ".";
+  function currentTab() {
+    var raw = (location.hash || "").replace(/^#/, "").toLowerCase();
+    return tabs.indexOf(raw) >= 0 ? raw : "all";
+  }
+
+  function applyTab(name) {
+    var tab = tabs.indexOf(name) >= 0 ? name : "all";
+    document.body.setAttribute("data-tab", tab);
+    document.querySelectorAll(".tab").forEach(function (el) {
+      var on = el.getAttribute("data-tab") === tab;
+      el.classList.toggle("is-on", on);
+      el.setAttribute("aria-selected", on ? "true" : "false");
+    });
+  }
+
+  function setTab(name, replace) {
+    var tab = tabs.indexOf(name) >= 0 ? name : "all";
+    var next = "#" + tab;
+    if (location.hash !== next) {
+      if (replace) history.replaceState(null, "", next);
+      else history.pushState(null, "", next);
+    }
+    applyTab(tab);
+  }
+
+  applyTab(currentTab());
+  if (!location.hash) history.replaceState(null, "", "#all");
+
+  document.querySelectorAll(".tab").forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      e.preventDefault();
+      setTab(el.getAttribute("data-tab"), false);
+      var summary = document.getElementById("summary");
+      if (summary) summary.scrollIntoView({ block: "nearest" });
     });
   });
 
+  window.addEventListener("hashchange", function () {
+    applyTab(currentTab());
+  });
+
+  var note = document.getElementById("note");
+  var subject = document.getElementById("note-subject");
+  var form = document.getElementById("note-form");
   if (!form) return;
   form.addEventListener("submit", function (e) {
     e.preventDefault();

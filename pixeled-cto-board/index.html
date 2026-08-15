@@ -11,8 +11,8 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <a class="skip" href="#needs-you">Skip to what needs you</a>
+<body data-tab="all">
+  <a class="skip" href="#summary">Skip to summary</a>
 
   <header class="top">
     <div class="brand">
@@ -21,126 +21,159 @@
     </div>
     <p class="updated">
       Last updated
-      <time id="updated" datetime="2026-08-15T17:25:00Z">Sat, 15 Aug 2026, 11:25 AM MDT</time>
+      <time id="updated" datetime="2026-08-15T17:38:00Z">Sat, 15 Aug 2026, 11:38 AM MDT</time>
     </p>
   </header>
 
   <main>
-    <section class="needs" id="needs-you" aria-labelledby="needs-title">
-      <p class="kicker">Start here · Needs you</p>
-      <h1 id="needs-title">Mockaccino live Supabase lock</h1>
-      <p class="needs-lede">Go / no-go. Real RLS holes: anon can read/update users. Store-admin SQL was not applied, on purpose. No SQL until you say.</p>
-      <div class="decisions">
-        <a class="btn lock" data-decision="Tell the CTO: lock it down" href="mailto:tom.sammer@gmail.com?subject=Tell%20the%20CTO%3A%20lock%20it%20down">Tell the CTO: lock it down</a>
-        <a class="btn hold" data-decision="Tell the CTO: hold off" href="mailto:tom.sammer@gmail.com?subject=Tell%20the%20CTO%3A%20hold%20off">Tell the CTO: hold off</a>
+    <section class="summary" id="summary" aria-labelledby="summary-title">
+      <p class="kicker">Where we’re at</p>
+      <h1 id="summary-title">Two projects. Eduable is quiet. Mockaccino is locking live Supabase, then E2E.</h1>
+      <ul class="stats">
+        <li class="stat overall">
+          <p class="stat-k">Overall</p>
+          <p class="stat-v">2 projects. Eduable quiet. Mockaccino locking live Supabase, then E2E.</p>
+        </li>
+        <li class="stat clear">
+          <p class="stat-k">Needs you</p>
+          <p class="stat-v">None right now</p>
+        </li>
+        <li class="stat flight">
+          <p class="stat-k">In flight</p>
+          <p class="stat-v">Mockaccino RLS hardening (Developer writing migration). QA E2E queued after.</p>
+        </li>
+      </ul>
+      <p class="quiet">RLS lock is in flight — nothing for you to click unless you want to leave a note.</p>
+    </section>
+
+    <nav class="tabs" aria-label="Projects">
+      <div class="tablist" role="tablist">
+        <a class="tab is-on" role="tab" id="tab-all" href="#all" data-tab="all" aria-selected="true">All</a>
+        <a class="tab" role="tab" id="tab-eduable" href="#eduable" data-tab="eduable" aria-selected="false">Eduable</a>
+        <a class="tab" role="tab" id="tab-mockaccino" href="#mockaccino" data-tab="mockaccino" aria-selected="false">Mockaccino</a>
+      </div>
+    </nav>
+
+    <section class="project eduable" data-project="eduable" aria-labelledby="eduable-title">
+      <header class="project-head">
+        <div>
+          <h2 id="eduable-title">Eduable</h2>
+          <p class="sub">TanStack migration</p>
+        </div>
+        <p class="pill pass">All clear</p>
+      </header>
+      <div class="lanes" aria-label="Eduable swim lanes">
+        <section class="lane">
+          <h3>Backlog <span class="count">2</span></h3>
+          <ul>
+            <li class="ticket">
+              <p class="t">Hub country-select nit</p>
+              <p class="d">Held — no spec until assigned</p>
+            </li>
+            <li class="ticket">
+              <p class="t">Seeded quote-token nit</p>
+              <p class="d">Held — no spec until assigned</p>
+            </li>
+          </ul>
+        </section>
+        <section class="lane">
+          <h3>Doing <span class="count">0</span></h3>
+          <p class="empty">Nothing in flight</p>
+        </section>
+        <section class="lane">
+          <h3>Waiting <span class="count">0</span></h3>
+          <p class="empty">Nothing on you</p>
+        </section>
+        <section class="lane done">
+          <h3>Done <span class="count">1</span></h3>
+          <ul>
+            <li class="ticket">
+              <p class="t">Leftovers #29–#32</p>
+              <p class="d">VERIFIED on staging-tanstack · team parked</p>
+            </li>
+          </ul>
+        </section>
       </div>
     </section>
 
-    <section class="board" id="board" aria-label="Projects">
-      <article class="card eduable" aria-labelledby="eduable-title">
-        <header class="card-head">
-          <div>
-            <h2 id="eduable-title">Eduable</h2>
-            <p class="sub">TanStack migration</p>
-          </div>
-          <p class="pill pass">All clear</p>
-        </header>
-        <p class="happening">Leftovers #29–#32 verified. Nothing from you.</p>
-        <dl>
-          <div class="row">
-            <dt>Last real work</dt>
-            <dd>
-              QA re-verified leftovers #29–#32 <strong>VERIFIED</strong> on staging-tanstack
-              (logo-fill, Hub/Explore not 500, Quebec “Not offered this week”, E2E 24P + 16 courses).
-              Parked nits (Hub country-select, seeded quote-token) held — no spec until assigned.
-            </dd>
-          </div>
-          <div class="row">
-            <dt>Team</dt>
-            <dd>
-              <ul class="chips" aria-label="Teams">
-                <li>Eduable TanStack</li>
-                <li>Plans</li>
-                <li>QA</li>
-                <li>Review</li>
-              </ul>
-            </dd>
-          </div>
-          <div class="row wait clear">
-            <dt>Waiting</dt>
-            <dd>Nothing from the user.</dd>
-          </div>
-          <div class="row">
-            <dt>Next</dt>
-            <dd>Idle unless assigned.</dd>
-          </div>
-        </dl>
-      </article>
-
-      <article class="card mockaccino" aria-labelledby="mock-title">
-        <header class="card-head">
-          <div>
-            <h2 id="mock-title">Mockaccino</h2>
-            <p class="sub">Chrome extension</p>
-          </div>
-          <p class="pill wait">Needs you</p>
-        </header>
-        <p class="happening">Go / no-go on locking live Supabase. No SQL until you say.</p>
-        <dl>
-          <div class="row">
-            <dt>Pack</dt>
-            <dd>v5.0.0 · 4.4MB unpacked <span class="was">(was 92MB)</span>. SW ~26MB. UI instant.</dd>
-          </div>
-          <div class="row">
-            <dt>Done today <span class="when">15 Aug 2026</span></dt>
-            <dd>
-              <ul class="checks">
-                <li><span class="pass">PASS</span> handshake</li>
-                <li><span class="pass">mostly PASS</span> full E2E</li>
-                <li><span class="pass">PASS</span> Admin tab <span class="note">(you only)</span></li>
-                <li><span class="pass">PASS</span> settings persist</li>
-                <li>console flood is LinkedIn, not us</li>
-                <li><span class="pass">PASS</span> client security PR #9</li>
-              </ul>
-            </dd>
-          </div>
-          <div class="row hole">
-            <dt>Security hole</dt>
-            <dd>
-              Live Supabase project: Mockaccino-chrome. Real RLS holes found: anon can read/update users.
-              Store-admin SQL was <strong>not</strong> applied, on purpose.
-            </dd>
-          </div>
-          <div class="row">
-            <dt>PRs open</dt>
-            <dd>
-              <ul class="prs">
-                <li>#7 hygiene</li>
-                <li>#8 admin</li>
-                <li>#9 security</li>
-              </ul>
-              <p class="fine">Open — not merged.</p>
-            </dd>
-          </div>
-          <div class="row wait hold">
-            <dt>Waiting</dt>
-            <dd>Your go / no-go on locking live Supabase. No SQL until you say.</dd>
-          </div>
-          <div class="row">
-            <dt>Next</dt>
-            <dd>Wait. No deploy.</dd>
-          </div>
-        </dl>
-      </article>
-    </section>
-
-    <section class="howto-wrap" aria-labelledby="howto-title">
-      <h2 id="howto-title" class="howto-kicker">Where to click</h2>
-      <ol class="howto">
-        <li><span class="n">1</span> Look at Needs you</li>
-        <li><span class="n">2</span> Open a project card</li>
-        <li><span class="n">3</span> Leave a note or text Grok Bot</li>
-      </ol>
+    <section class="project mockaccino" data-project="mockaccino" aria-labelledby="mock-title">
+      <header class="project-head">
+        <div>
+          <h2 id="mock-title">Mockaccino</h2>
+          <p class="sub">Chrome extension</p>
+        </div>
+        <p class="pill flight">In flight</p>
+      </header>
+      <div class="lanes" aria-label="Mockaccino swim lanes">
+        <section class="lane">
+          <h3>Backlog <span class="count">2</span></h3>
+          <ul>
+            <li class="ticket">
+              <p class="t">Apply store-admin SQL</p>
+              <p class="d">Blocked until session/RLS lock lands</p>
+            </li>
+            <li class="ticket">
+              <p class="t">Merge PRs #7 #8 #9</p>
+              <p class="d">Not asked</p>
+            </li>
+          </ul>
+        </section>
+        <section class="lane">
+          <h3>Doing <span class="count">1</span></h3>
+          <ul>
+            <li class="ticket security">
+              <p class="t">Live RLS hardening</p>
+              <p class="d">users UPDATE anon, chat_events RLS, store admin policy, revoke merge/test RPCs, edge JWT. Session RPCs stay so the extension still works.</p>
+            </li>
+          </ul>
+        </section>
+        <section class="lane wait">
+          <h3>Waiting <span class="count">1</span></h3>
+          <ul>
+            <li class="ticket">
+              <p class="t">QA E2E</p>
+              <p class="d">After SQL is live</p>
+            </li>
+          </ul>
+        </section>
+        <section class="lane done">
+          <h3>Done <span class="count">8</span></h3>
+          <ul>
+            <li class="ticket">
+              <p class="t">Slim pack 92→4.4MB</p>
+              <p class="d">Unpacked · UI instant</p>
+            </li>
+            <li class="ticket">
+              <p class="t">Handshake</p>
+              <p class="d">PASS</p>
+            </li>
+            <li class="ticket">
+              <p class="t">Full E2E</p>
+              <p class="d">Mostly PASS</p>
+            </li>
+            <li class="ticket">
+              <p class="t">Admin tab</p>
+              <p class="d">PASS · you only</p>
+            </li>
+            <li class="ticket">
+              <p class="t">Settings persist</p>
+              <p class="d">PASS</p>
+            </li>
+            <li class="ticket">
+              <p class="t">Console flood = LinkedIn</p>
+              <p class="d">Not us</p>
+            </li>
+            <li class="ticket">
+              <p class="t">Client security PR #9</p>
+              <p class="d">PASS · open, not merged</p>
+            </li>
+            <li class="ticket">
+              <p class="t">Live audit</p>
+              <p class="d">Read-only</p>
+            </li>
+          </ul>
+        </section>
+      </div>
     </section>
 
     <section class="note-card" aria-labelledby="note-title">
@@ -148,7 +181,7 @@
       <form id="note-form" action="mailto:tom.sammer@gmail.com" method="get">
         <input type="hidden" name="subject" id="note-subject" value="CTO board note">
         <label for="note">Note</label>
-        <textarea id="note" name="body" rows="5" required maxlength="4000" placeholder="Go / no-go, a question, or whatever you want Tom to see."></textarea>
+        <textarea id="note" name="body" rows="5" required maxlength="4000" placeholder="A question, a note, or whatever you want Tom to see."></textarea>
         <button type="submit">Open Mail</button>
       </form>
       <p class="alt">This opens the Mail app. Or skip it and text me in Grok Bot — I see that first.</p>
