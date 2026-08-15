@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12141a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Pixeled Apps CTO status board — Eduable and Mockaccino.">
+  <title>Pixeled Apps · CTO board</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#board">Skip to projects</a>
+
+  <header class="top">
+    <div class="brand">
+      <p class="wordmark">Pixeled Apps</p>
+      <p class="role">CTO board</p>
+    </div>
+    <p class="updated">
+      Last updated
+      <time id="updated" datetime="2026-08-15T17:20:00Z">15 Aug 2026, 11:20 AM MDT</time>
+    </p>
+  </header>
+
+  <main>
+    <section class="board" id="board" aria-label="Projects">
+      <article class="col" aria-labelledby="eduable-title">
+        <header class="col-head">
+          <div>
+            <h1 id="eduable-title">Eduable</h1>
+            <p class="sub">TanStack migration</p>
+          </div>
+          <p class="badge quiet">Quiet / leftovers cleared</p>
+        </header>
+
+        <dl>
+          <div class="row">
+            <dt>Last real work</dt>
+            <dd>
+              QA re-verified leftovers #29–#32 <strong>VERIFIED</strong> on staging-tanstack
+              (logo-fill, Hub/Explore not 500, Quebec “Not offered this week”, E2E 24P + 16 courses).
+              Parked nits (Hub country-select, seeded quote-token) held — no spec until assigned.
+            </dd>
+          </div>
+          <div class="row">
+            <dt>Team</dt>
+            <dd>
+              <ul class="chips" aria-label="Teams">
+                <li>Eduable TanStack</li>
+                <li>Plans</li>
+                <li>QA</li>
+                <li>Review</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="row wait clear">
+            <dt>Waiting</dt>
+            <dd>Nothing from the user.</dd>
+          </div>
+          <div class="row">
+            <dt>Next</dt>
+            <dd>Idle unless assigned.</dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="col" aria-labelledby="mock-title">
+        <header class="col-head">
+          <div>
+            <h1 id="mock-title">Mockaccino</h1>
+            <p class="sub">Chrome extension</p>
+          </div>
+          <p class="badge active">Active — security follow-up</p>
+        </header>
+
+        <dl>
+          <div class="row">
+            <dt>Pack</dt>
+            <dd>v5.0.0 · 4.4MB unpacked <span class="was">(was 92MB)</span>. SW ~26MB. UI instant.</dd>
+          </div>
+          <div class="row">
+            <dt>Done today <span class="when">15 Aug 2026</span></dt>
+            <dd>
+              <ul class="checks">
+                <li><span class="pass">PASS</span> handshake</li>
+                <li><span class="pass">mostly PASS</span> full E2E</li>
+                <li><span class="pass">PASS</span> Admin tab <span class="note">(you only)</span></li>
+                <li><span class="pass">PASS</span> settings persist</li>
+                <li>console flood is LinkedIn, not us</li>
+                <li><span class="pass">PASS</span> client security PR #9</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="row warn">
+            <dt>Live Supabase</dt>
+            <dd>
+              Project: Mockaccino-chrome. Real RLS holes found: anon can read/update users.
+              Store-admin SQL was <strong>not</strong> applied, on purpose.
+            </dd>
+          </div>
+          <div class="row">
+            <dt>PRs open</dt>
+            <dd>
+              <ul class="prs">
+                <li>#7 hygiene</li>
+                <li>#8 admin</li>
+                <li>#9 security</li>
+              </ul>
+              <p class="fine">Open — not merged.</p>
+            </dd>
+          </div>
+          <div class="row wait hold">
+            <dt>Waiting</dt>
+            <dd>Your go / no-go on locking live Supabase. No SQL until you say.</dd>
+          </div>
+          <div class="row">
+            <dt>Next</dt>
+            <dd>Wait. No deploy.</dd>
+          </div>
+        </dl>
+      </article>
+    </section>
+
+    <section class="note-card" aria-labelledby="note-title">
+      <h2 id="note-title">Leave the CTO a note</h2>
+      <p class="lede">Opens Mail on your phone. Subject is set for you.</p>
+      <form id="note-form" action="mailto:tom.sammer@gmail.com" method="get">
+        <input type="hidden" name="subject" value="CTO board note">
+        <label for="note">Note</label>
+        <textarea id="note" name="body" rows="5" required maxlength="4000" placeholder="Go / no-go, a question, or whatever you want Tom to see."></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p class="alt">Or just text me in the Grok Bot chat — I see that first.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Rohit / Pixeled Apps. This board is for the owner. Talk to the CTO in Grok Bot.</p>
+  </footer>
+
+  <script src="board.js"></script>
+</body>
+</html>
