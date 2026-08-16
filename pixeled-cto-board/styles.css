@@ -285,6 +285,8 @@ body[data-tab="mockaccino"] .project.eduable { display: none; }
   align-items: center;
   justify-content: space-between;
 }
+.lane.flight { background: var(--mock-soft); border-color: #D4BFE6; }
+.lane.flight h3 { color: var(--mock); }
 .lane.wait { background: var(--amber-soft); border-color: #E0A43A; }
 .lane.wait h3 { color: var(--amber-ink); }
 .lane.done { background: var(--green-soft); border-color: #B7D9C2; }
@@ -327,6 +329,15 @@ body[data-tab="mockaccino"] .project.eduable { display: none; }
   font-size: 14px;
   color: var(--muted);
   line-height: 1.35;
+}
+.ticket a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ticket a:focus {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
 }
 .ticket.security {
   border-color: #E8A39E;

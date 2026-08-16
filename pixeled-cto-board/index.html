@@ -21,29 +21,29 @@
     </div>
     <p class="updated">
       Last updated
-      <time id="updated" datetime="2026-08-16T01:44:00Z">Sat, 15 Aug 2026, 7:44 PM MDT</time>
+      <time id="updated" datetime="2026-08-16T02:44:00Z">Sat, 15 Aug 2026, 8:44 PM MDT</time>
     </p>
   </header>
 
   <main>
     <section class="summary" id="summary" aria-labelledby="summary-title">
       <p class="kicker">Where we’re at</p>
-      <h1 id="summary-title">Both teams parked. Last ship = Auth cutover on main.</h1>
+      <h1 id="summary-title">Eduable two nits in flight (staging-tanstack only). Mockaccino Auth live; leftover folding into #15.</h1>
       <ul class="stats">
         <li class="stat overall">
           <p class="stat-k">Overall</p>
-          <p class="stat-v">Eduable parked. Mockaccino parked. Last ship = Auth cutover on main.</p>
+          <p class="stat-v">Eduable #33/#34 in flight to staging-tanstack. Mockaccino Auth live; leftover folding into #15.</p>
         </li>
-        <li class="stat clear">
+        <li class="stat wait">
           <p class="stat-k">Needs you</p>
-          <p class="stat-v">None</p>
+          <p class="stat-v">Hold Eduable merge until Country retest greens, then staging-tanstack only</p>
         </li>
-        <li class="stat clear">
+        <li class="stat flight">
           <p class="stat-k">In flight</p>
-          <p class="stat-v">None</p>
+          <p class="stat-v">#33 Country retest on Vite 3013 · #15 leftover fold</p>
         </li>
       </ul>
-      <p class="quiet">Identity is LinkedIn OAuth / Supabase Auth JWT. Live RLS own-row on auth.uid(). Email/Stripe hidden. users_directory is the public member list. No Chrome store deploy. No live SQL pending.</p>
+      <p class="quiet">Eduable: never Next.js staging, never deploy. Mockaccino: no Chrome store deploy. Bugbot: draft while building, mark ready for review, no SHIP/merge until Bugbot on the current SHA. Identity is LinkedIn OAuth / Supabase Auth JWT.</p>
     </section>
 
     <nav class="tabs" aria-label="Projects">
@@ -58,38 +58,43 @@
       <header class="project-head">
         <div>
           <h2 id="eduable-title">Eduable</h2>
-          <p class="sub">TanStack migration · parked</p>
+          <p class="sub">TanStack nits · staging-tanstack only</p>
         </div>
-        <p class="pill pass">Parked</p>
+        <p class="pill flight">In flight</p>
       </header>
       <div class="lanes" aria-label="Eduable swim lanes">
         <section class="lane">
-          <h3>Backlog <span class="count">2</span></h3>
+          <h3>Backlog <span class="count">0</span></h3>
+          <p class="empty">Nothing held</p>
+        </section>
+        <section class="lane flight">
+          <h3>Doing <span class="count">1</span></h3>
           <ul>
             <li class="ticket">
-              <p class="t">Hub country-select nit</p>
-              <p class="d">Held — no spec until assigned</p>
-            </li>
-            <li class="ticket">
-              <p class="t">Seeded quote-token nit</p>
-              <p class="d">Held — no spec until assigned</p>
+              <p class="t"><a href="https://github.com/rohit-romley/eduable-dev/pull/33">#33</a> Hub country-select</p>
+              <p class="d">Review SHIP · Bugbot success @ 820788c (York/New York loose-match folded) · QA Country retest in flight on local Vite 3013</p>
             </li>
           </ul>
         </section>
-        <section class="lane">
-          <h3>Doing <span class="count">0</span></h3>
-          <p class="empty">Nothing in flight</p>
-        </section>
-        <section class="lane">
-          <h3>Waiting <span class="count">0</span></h3>
-          <p class="empty">Nothing on you</p>
+        <section class="lane wait">
+          <h3>Waiting <span class="count">2</span></h3>
+          <ul>
+            <li class="ticket">
+              <p class="t">Merge #33 + #34 to staging-tanstack only</p>
+              <p class="d">Hold until Country retest greens · never Next.js staging · never deploy</p>
+            </li>
+            <li class="ticket">
+              <p class="t"><a href="https://github.com/rohit-romley/eduable-dev/pull/34">#34</a> quote-enter portal-code</p>
+              <p class="d">Review SHIP · Bugbot success @ 46ab65f · QA VERIFIED (empty form first paint, same-token Open quote revalidates)</p>
+            </li>
+          </ul>
         </section>
         <section class="lane done">
           <h3>Done <span class="count">1</span></h3>
           <ul>
             <li class="ticket">
               <p class="t">Leftovers #29–#32</p>
-              <p class="d">VERIFIED on staging-tanstack · team parked · do not merge TanStack into Next staging</p>
+              <p class="d">VERIFIED on staging-tanstack · do not merge TanStack into Next staging</p>
             </li>
           </ul>
         </section>
@@ -100,86 +105,46 @@
       <header class="project-head">
         <div>
           <h2 id="mock-title">Mockaccino</h2>
-          <p class="sub">Chrome extension · parked</p>
+          <p class="sub">Chrome extension · leftover in #15</p>
         </div>
-        <p class="pill pass">Parked</p>
+        <p class="pill flight">In flight</p>
       </header>
       <div class="lanes" aria-label="Mockaccino swim lanes">
         <section class="lane">
-          <h3>Backlog <span class="count">2</span></h3>
+          <h3>Backlog <span class="count">0</span></h3>
+          <p class="empty">Nothing held</p>
+        </section>
+        <section class="lane flight">
+          <h3>Doing <span class="count">1</span></h3>
           <ul>
             <li class="ticket">
-              <p class="t">Store-admin SQL (old spoofable type)</p>
-              <p class="d">Obsolete — not the live path</p>
-            </li>
-            <li class="ticket">
-              <p class="t">Jobs-table Admin 0</p>
-              <p class="d">Known — user_jobs_applied lock</p>
+              <p class="t"><a href="https://github.com/rohit-romley/mockaccino-chrome-main/pull/15">#15</a> leftover — admin_assert_store_admin</p>
+              <p class="d">Ready @ 87b00b3 · Admin lower panel still calls missing admin_assert_store_admin · Developer folding JWT replacement into #15 · Bugbot High/Medium fold into same PR · Autofix off · no SHIP until Bugbot on that SHA</p>
             </li>
           </ul>
-        </section>
-        <section class="lane">
-          <h3>Doing <span class="count">0</span></h3>
-          <p class="empty">Nothing in flight</p>
         </section>
         <section class="lane">
           <h3>Waiting <span class="count">0</span></h3>
           <p class="empty">Nothing on you</p>
         </section>
         <section class="lane done">
-          <h3>Done <span class="count">13</span></h3>
+          <h3>Done <span class="count">4</span></h3>
           <ul>
             <li class="ticket">
+              <p class="t">Admin Jobs KPI live</p>
+              <p class="d">86 via JWT RPC get_admin_jobs_applied_count · Members 20 · Karma 2210</p>
+            </li>
+            <li class="ticket">
               <p class="t">Auth hard cutover (PR #14)</p>
-              <p class="d">Last ship · squash-merged to main · SHA 8b7af47 · #12 and #13 closed as folded in · LinkedIn OAuth / Supabase Auth JWT · live RLS own-row on auth.uid() · anon cannot SELECT users or EXECUTE set_session_user · Email/Stripe hidden · users_directory is the public member list · no Chrome store deploy · no more live SQL pending</p>
+              <p class="d">Last ship on main · SHA 8b7af47 · LinkedIn OAuth / Supabase Auth JWT · no Chrome store deploy</p>
             </li>
             <li class="ticket">
-              <p class="t">QA after Auth cutover</p>
-              <p class="d">handshake / options persist / members 20 PASS · Admin KPIs 20 / 2210 from users_directory PASS · Jobs applied 0 is known user_jobs_applied lock · No Admin without Auth PASS · dist v5.0.0 4.4MB loaded on the box · signed in as Rohit Romley / rohit-romley / 280 karma</p>
+              <p class="t">QA on #15 pack</p>
+              <p class="d">Signed-out PASS · signed-in PASS on Requests / Store / Jobs Applied / Give Karma · session survived pack reload · signed in as rohit-romley (karma 280)</p>
             </li>
             <li class="ticket">
-              <p class="t">Stack on main</p>
-              <p class="d">PRs #1–#11 merged · HEAD was 751b523 · no Chrome Web Store deploy · no new live SQL that merge</p>
-            </li>
-            <li class="ticket">
-              <p class="t">QA E2E after RLS lock</p>
-              <p class="d">All 8 PASS · dist still that last QA-passed 5.0.0 / 4.4MB pack</p>
-            </li>
-            <li class="ticket">
-              <p class="t">Live RLS hardening applied (PR #10)</p>
-              <p class="d">Merged with the stack · no new live SQL this merge</p>
-            </li>
-            <li class="ticket">
-              <p class="t">Slim pack 92→4.4MB</p>
-              <p class="d">Unpacked · UI instant · slim/handshake + 59MB wasm drop landed with #1–#6</p>
-            </li>
-            <li class="ticket">
-              <p class="t">Handshake</p>
-              <p class="d">PASS</p>
-            </li>
-            <li class="ticket">
-              <p class="t">Full E2E</p>
-              <p class="d">Mostly PASS</p>
-            </li>
-            <li class="ticket">
-              <p class="t">Admin tab</p>
-              <p class="d">PASS · you only</p>
-            </li>
-            <li class="ticket">
-              <p class="t">Settings persist</p>
-              <p class="d">PASS</p>
-            </li>
-            <li class="ticket">
-              <p class="t">Console flood = LinkedIn</p>
-              <p class="d">Not us</p>
-            </li>
-            <li class="ticket">
-              <p class="t">Client security PR #9</p>
-              <p class="d">Merged with the stack</p>
-            </li>
-            <li class="ticket">
-              <p class="t">Live audit</p>
-              <p class="d">Read-only</p>
+              <p class="t">Earlier stack</p>
+              <p class="d">#1–#11 + RLS + slim pack already on main</p>
             </li>
           </ul>
         </section>
