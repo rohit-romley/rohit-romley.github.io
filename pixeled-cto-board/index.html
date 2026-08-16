@@ -21,18 +21,18 @@
     </div>
     <p class="updated">
       Last updated
-      <time id="updated" datetime="2026-08-15T21:07:00Z">Sat, 15 Aug 2026, 3:07 PM MDT</time>
+      <time id="updated" datetime="2026-08-16T01:44:00Z">Sat, 15 Aug 2026, 7:44 PM MDT</time>
     </p>
   </header>
 
   <main>
     <section class="summary" id="summary" aria-labelledby="summary-title">
       <p class="kicker">Where we’re at</p>
-      <h1 id="summary-title">Both teams parked. #12 is ready and held.</h1>
+      <h1 id="summary-title">Both teams parked. Last ship = Auth cutover on main.</h1>
       <ul class="stats">
         <li class="stat overall">
           <p class="stat-k">Overall</p>
-          <p class="stat-v">Eduable parked. Mockaccino parked. Last ship = stack on main. #12 ready, held.</p>
+          <p class="stat-v">Eduable parked. Mockaccino parked. Last ship = Auth cutover on main.</p>
         </li>
         <li class="stat clear">
           <p class="stat-k">Needs you</p>
@@ -43,7 +43,7 @@
           <p class="stat-v">None</p>
         </li>
       </ul>
-      <p class="quiet">Live UPDATE-any-user still closed. users SELECT * still open (email/Stripe readable) on purpose until they assign hide. #12 stays open — do not merge, do not REVOKE live columns.</p>
+      <p class="quiet">Identity is LinkedIn OAuth / Supabase Auth JWT. Live RLS own-row on auth.uid(). Email/Stripe hidden. users_directory is the public member list. No Chrome store deploy. No live SQL pending.</p>
     </section>
 
     <nav class="tabs" aria-label="Projects">
@@ -109,12 +109,12 @@
           <h3>Backlog <span class="count">2</span></h3>
           <ul>
             <li class="ticket">
-              <p class="t">#12 column-list pack</p>
-              <p class="d">Ready, held · stays OPEN · do not merge · do not REVOKE live columns · QA PASS (handshake, members, options, Admin) · dist 4.4MB v5.0.0</p>
+              <p class="t">Store-admin SQL (old spoofable type)</p>
+              <p class="d">Obsolete — not the live path</p>
             </li>
             <li class="ticket">
-              <p class="t">Apply store-admin SQL</p>
-              <p class="d">Still blocked — set_session_user is spoofable</p>
+              <p class="t">Jobs-table Admin 0</p>
+              <p class="d">Known — user_jobs_applied lock</p>
             </li>
           </ul>
         </section>
@@ -130,20 +130,20 @@
           <h3>Done <span class="count">13</span></h3>
           <ul>
             <li class="ticket">
-              <p class="t">QA on #12 column-list pack</p>
-              <p class="d">All 4 PASS · handshake Rohit Romley 280 karma · members table · Resume Review OFF survived reload · Admin Members 20 / Karma 2210 · Jobs applied 0 is known user_jobs_applied RLS degrade, not this pack · nit: popup news Invalid Date still</p>
+              <p class="t">Auth hard cutover (PR #14)</p>
+              <p class="d">Last ship · squash-merged to main · SHA 8b7af47 · #12 and #13 closed as folded in · LinkedIn OAuth / Supabase Auth JWT · live RLS own-row on auth.uid() · anon cannot SELECT users or EXECUTE set_session_user · Email/Stripe hidden · users_directory is the public member list · no Chrome store deploy · no more live SQL pending</p>
+            </li>
+            <li class="ticket">
+              <p class="t">QA after Auth cutover</p>
+              <p class="d">handshake / options persist / members 20 PASS · Admin KPIs 20 / 2210 from users_directory PASS · Jobs applied 0 is known user_jobs_applied lock · No Admin without Auth PASS · dist v5.0.0 4.4MB loaded on the box · signed in as Rohit Romley / rohit-romley / 280 karma</p>
             </li>
             <li class="ticket">
               <p class="t">Stack on main</p>
-              <p class="d">Last ship · PRs #1–#11 merged · HEAD 751b523 · no Chrome Web Store deploy · no new live SQL this merge</p>
+              <p class="d">PRs #1–#11 merged · HEAD was 751b523 · no Chrome Web Store deploy · no new live SQL that merge</p>
             </li>
             <li class="ticket">
               <p class="t">QA E2E after RLS lock</p>
               <p class="d">All 8 PASS · dist still that last QA-passed 5.0.0 / 4.4MB pack</p>
-            </li>
-            <li class="ticket">
-              <p class="t">SELECT * restored for current pack</p>
-              <p class="d">UPDATE-any-user still closed · email/Stripe still readable on purpose until they assign hide</p>
             </li>
             <li class="ticket">
               <p class="t">Live RLS hardening applied (PR #10)</p>
